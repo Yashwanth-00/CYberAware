@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CYberAware - MitM Demo</title>
+  <link rel="icon" type="image/png" href="images/image.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    /* tiny demo-specific styles (keeps the template look) */
+    .mitm-container {
+      max-width:760px;
+      margin:48px auto;
+      padding:22px;
+      background:#1c212c;
+      border-radius:10px;
+      color:#e6f7ff;
+      box-shadow:0 0 20px rgba(0,0,0,0.45);
+    }
+    .mitm-row { display:flex; gap:12px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; }
+    .mitm-box { flex:1 1 240px; background:rgba(0,0,0,0.08); padding:14px; border-radius:8px; min-width:220px; }
+    .mitm-box h4 { margin:0 0 8px 0; color:#fff; }
+    .mitm-box textarea { width:100%; height:90px; background:#071021; border:none; color:#fff; padding:8px; border-radius:6px; resize:vertical; }
+    .mitm-controls { display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
+    .mitm-controls button { padding:8px 12px; border-radius:8px; border:none; cursor:pointer; font-weight:700; background:linear-gradient(90deg,var(--accent),#7b61ff); color:#021; }
+    .mitm-log { margin-top:14px; background:rgba(255,255,255,0.02); padding:12px; border-radius:8px; color:var(--muted); font-family:monospace; white-space:pre-wrap; font-size:13px; }
+    .mitm-note { margin-top:12px; color:var(--muted); font-size:14px; }
+    .gif-visual { display:block; margin:12px auto; width:160px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <!-- Template sidebar/header (unchanged except ordering below) -->
+  <div class="background-image-container"></div>
+
+  <aside class="sidebar" id="siteSidebar">
+    <button class="toggle" aria-label="Toggle sidebar" aria-expanded="true"><i class="fas fa-bars" style="color:var(--accent)"></i></button>
+
+    <nav class="side-nav" aria-label="Primary">
+      <div>
+        <a class="nav-item" href="../index.html">
+          <span class="icon"><i class="fas fa-home"></i></span>
+          <span class="label">Home</span>
+        </a>
+
+        <!-- ATTACKS: phishing first, then malware -->
+        <div class="nav-item has-sub" id="attacksMenu" tabindex="0" role="button" aria-expanded="false" aria-controls="attacksSub">
+          <a class="nav-link">
+            <span class="icon"><i class="fas fa-skull-crossbones"></i></span>
+            <span class="label">Attacks</span>
+            <span class="sub-caret"><i class="fas fa-chevron-down"></i></span>
+          </a>
+
+          <div class="sub-wrap" id="attacksSub" role="region" aria-hidden="true">
+            <a class="sub-item" href="../attacks/phishing.html">Phishing & Social Engineering</a>
+            <a class="sub-item" href="../attacks/malware.html">Malware Attacks</a>
+            <a class="sub-item" href="../attacks/dos.html">Denial-of-Service (DoS)</a>
+            <a class="sub-item" href="../attacks/mitm.html">Man-in-the-Middle (MitM)</a>
+            <a class="sub-item" href="../attacks/injection.html">Injection Attacks</a>
+            <a class="sub-item" href="../attacks/password.html">Password Attacks</a>
+            <a class="sub-item" href="../attacks/insider.html">Insider Threats</a>
+            <a class="sub-item" href="../attacks/zeroday.html">Zero-Day Exploits</a>
+            <a class="sub-item" href="../attacks/apt.html">Advanced Persistent Threats (APT)</a>
+            <a class="sub-item" href="../attacks/supplychain.html">Supply Chain Attacks</a>
+            <a class="sub-item" href="../attacks/iot.html">IoT & Hardware Attacks</a>
+            <a class="sub-item" href="../attacks/crypto.html">Cryptographic Attacks</a>
+          </div>
+        </div>
+
+        <a class="nav-item" href="../demos.html">
+          <span class="icon"><i class="fas fa-play-circle"></i></span>
+          <span class="label">Demos</span>
+        </a>
+
+        <a class="nav-item" href="../resources.html">
+          <span class="icon"><i class="fas fa-book"></i></span>
+          <span class="label">Resources</span>
+        </a>
+
+        <a class="nav-item" href="../about.html">
+          <span class="icon"><i class="fas fa-info-circle"></i></span>
+          <span class="label">About</span>
+        </a>
+
+        <a class="nav-item" href="../contact.html">
+          <span class="icon"><i class="fas fa-envelope"></i></span>
+          <span class="label">Contact</span>
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <header class="header" role="banner">
+    <div class="logo"><span class="mark">CYber</span>Aware</div>
+  </header>
+
+  <main class="main">
+    <div class="mitm-container">
+      <h2 style="margin:0 0 10px 0;">Man-in-the-Middle (MitM) — Visual Demo</h2>
+
+      
+
+      <p style="color:var(--muted); margin:0 0 12px 0;">This demo visualizes how a message from a client can be intercepted and modified before reaching the server. No network interception is performed — everything is simulated locally.</p>
+
+      <div class="mitm-row" style="margin-top:12px;">
+        <div class="mitm-box" aria-live="polite">
+          <h4>Client</h4>
+          <textarea id="clientMsg">Transfer $500 to account 12345</textarea>
+          <div class="mitm-controls">
+            <button id="sendBtn">Send →</button>
+          </div>
+        </div>
+
+        <div class="mitm-box" id="attackerBox">
+          <h4>Interceptor (Attacker)</h4>
+          <div id="interceptLog" style="min-height:72px; color:var(--muted);">No traffic intercepted yet.</div>
+          <div class="mitm-controls" style="margin-top:10px;">
+            <button id="modifyBtn">Modify</button>
+            <button id="forwardBtn">Forward</button>
+            <button id="dropBtn">Drop</button>
+          </div>
+        </div>
+
+        <div class="mitm-box" aria-live="polite">
+          <h4>Server</h4>
+          <div id="serverLog" style="min-height:72px; color:var(--muted);">No message received.</div>
+        </div>
+      </div>
+
+      <div class="mitm-log" id="mitmLog">Simulation log: idle</div>
+
+      <div class="mitm-note">
+        <div style="margin-top:10px;">Real example: <strong>Firesheep (2010)</strong> highlighted session hijacking risks on open Wi-Fi. Learn: always use HTTPS and VPNs on untrusted networks.</div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // MITM demo safe logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const sendBtn = document.getElementById('sendBtn');
+      const modifyBtn = document.getElementById('modifyBtn');
+      const forwardBtn = document.getElementById('forwardBtn');
+      const dropBtn = document.getElementById('dropBtn');
+      const clientMsg = document.getElementById('clientMsg');
+      const interceptLog = document.getElementById('interceptLog');
+      const serverLog = document.getElementById('serverLog');
+      const mitmLog = document.getElementById('mitmLog');
+
+      function writeLog(line){
+        if(mitmLog.textContent === 'Simulation log: idle') mitmLog.textContent = '';
+        mitmLog.textContent += (mitmLog.textContent ? '\n' : '') + line;
+      }
+
+      let interceptedPayload = null;
+
+      sendBtn.addEventListener('click', () => {
+        const msg = clientMsg.value;
+        // simulate sending: attacker intercepts
+        interceptedPayload = msg;
+        interceptLog.textContent = 'Intercepted: ' + interceptedPayload;
+        serverLog.textContent = 'Waiting for message...';
+        writeLog('Client -> Network: message sent and intercepted.');
+      });
+
+      modifyBtn.addEventListener('click', () => {
+        if(!interceptedPayload){
+          interceptLog.textContent = 'No intercepted payload to modify.';
+          return;
+        }
+        // safe modification example: change amount
+        const modified = interceptedPayload.replace(/\$?\d+/, '$10000');
+        interceptedPayload = modified;
+        interceptLog.textContent = 'Modified: ' + interceptedPayload;
+        writeLog('Attacker edited the message before forwarding.');
+      });
+
+      forwardBtn.addEventListener('click', () => {
+        if(!interceptedPayload){
+          writeLog('Nothing to forward.');
+          interceptLog.textContent = 'No intercepted payload.';
+          return;
+        }
+        serverLog.textContent = 'Received: ' + interceptedPayload;
+        writeLog('Network -> Server: message forwarded.');
+        // clear intercepted payload to show flow
+        interceptedPayload = null;
+        setTimeout(()=> { interceptLog.textContent = 'No traffic intercepted yet.'; }, 400);
+      });
+
+      dropBtn.addEventListener('click', () => {
+        if(!interceptedPayload){
+          interceptLog.textContent = 'No intercepted payload.';
+          return;
+        }
+        interceptedPayload = null;
+        interceptLog.textContent = 'Dropped (simulated): attacker discarded message.';
+        serverLog.textContent = 'No message received.';
+        writeLog('Attacker dropped the message (denial/interrupt).');
+      });
+
+      // clicking areas resets logs if needed (optional)
+    });
+  </script>
+
+  <script src="../script.js"></script>
+</body>
+</html>

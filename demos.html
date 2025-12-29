@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CYberAware</title>
+    <link rel="icon" type="image/png" href="images/image.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="background-image-container"></div>
+  <aside class="sidebar" id="siteSidebar">
+    <button class="toggle" aria-label="Toggle sidebar" aria-expanded="true"><i class="fas fa-bars" style="color:var(--accent)"></i></button>
+
+<nav class="side-nav" aria-label="Primary">
+    <div>
+  <a class="nav-item" href="index.html">
+    <span class="icon"><i class="fas fa-home"></i></span>
+    <span class="label">Home</span>
+  </a>
+
+  <!-- Attacks menu with submenu -->
+  <div class="nav-item has-sub" id="attacksMenu" tabindex="0" role="button" aria-expanded="false" aria-controls="attacksSub">
+  <a class="nav-link">
+    <span class="icon"><i class="fas fa-skull-crossbones"></i></span>
+    <span class="label">Attacks</span>
+    <span class="sub-caret"><i class="fas fa-chevron-down"></i></span>
+  </a>
+
+<div class="sub-wrap" id="attacksSub" role="region" aria-hidden="true">
+    <a class="sub-item" href="attacks/phishing.html">Phishing & Social Engineering</a>
+    <a class="sub-item" href="attacks/malware.html">Malware Attacks</a>
+    <a class="sub-item" href="attacks/dos.html">Denial-of-Service (DoS)</a>
+    <a class="sub-item" href="attacks/MitM.html">Man-in-the-Middle (MitM)</a>
+    <a class="sub-item" href="attacks/injection.html">Injection Attacks</a>
+    <a class="sub-item" href="attacks/password.html">Password Attacks</a>
+    <a class="sub-item" href="attacks/insider.html">Insider Threats</a>
+    <a class="sub-item" href="attacks/zero.html">Zero-Day Exploits</a>
+    <a class="sub-item" href="attacks/apt.html">Advanced Persistent Threats (APT)</a>
+    <a class="sub-item" href="attacks/suplly.html">Supply Chain Attacks</a>
+    <a class="sub-item" href="attacks/IoT.html">IoT & Hardware Attacks</a>
+    <a class="sub-item" href="attacks/crypto.html">Cryptographic Attacks</a>
+  </div>
+</div>
+
+  <a class="nav-item" href="demos.html">
+    <span class="icon"><i class="fas fa-play-circle"></i></span>
+    <span class="label">Demos</span>
+  </a>
+
+  <a class="nav-item" href="resources.html">
+    <span class="icon"><i class="fas fa-book"></i></span>
+    <span class="label">Resources</span>
+  </a>
+
+  <a class="nav-item" href="about.html">
+    <span class="icon"><i class="fas fa-info-circle"></i></span>
+    <span class="label">About</span>
+  </a>
+
+  <a class="nav-item" href="contact.html">
+    <span class="icon"><i class="fas fa-envelope"></i></span>
+    <span class="label">Contact</span>
+  </a>
+</nav>
+
+
+  </aside>
+  <header class="header" role="banner">
+    <div class="logo"><span class="mark">CYber</span>Aware</div>
+  </header>
+
+  <main class="main">
+    
+    <h1 style="margin:0 0 12px 0">Demos</h1>
+   
+   
+ 
+
+<div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:14px;border-radius:8px">
+  <p style="color:var(--muted)">Here are the demos that visually show how different cyber attacks happen.</p>
+</div>
+
+<!-- PHISHING -->
+<div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:14px;border-radius:8px">
+  <p style="color:var(--muted)">
+    <a href="demos/phishing-demo.html" style="color:var(--accent); text-decoration:none;">
+      Phishing Attack Demo
+    </a> – See how credentials are stolen using fake login pages.
+  </p>
+</div>
+
+<!-- MALWARE -->
+<div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:14px;border-radius:8px">
+  <p style="color:var(--muted)">
+    <a href="demos/malware-demo.html" style="color:var(--accent); text-decoration:none;">
+      Malware Attack Demo
+    </a> – Demonstrates how malware infects and spreads.
+  </p>
+</div>
+
+<!-- DOS/DDOS -->
+<div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:14px;border-radius:8px">
+  <p style="color:var(--muted)">
+    <a href="demos/dos-demo.html" style="color:var(--accent); text-decoration:none;">
+      DoS / DDoS Attack Demo
+    </a> – Visual overload simulation.
+  </p>
+</div>
+
+<!-- MITM -->
+<div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:14px;border-radius:8px">
+  <p style="color:var(--muted)">
+    <a href="demos/mitm-demo.html" style="color:var(--accent); text-decoration:none;">
+      Man-in-the-Middle Demo
+    </a> – Shows message interception & modification.
+  </p>
+</div>
+
+<!-- INJECTION -->
+<div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:14px;border-radius:8px">
+  <p style="color:var(--muted)">
+    <a href="demos/injection-demo.html" style="color:var(--accent); text-decoration:none;">
+      Injection Attacks Demo
+    </a> – SQL Injection & XSS visual simulation.
+  </p>
+</div>
+
+<!-- PASSWORD -->
+<div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:14px;border-radius:8px">
+  <p style="color:var(--muted)">
+    <a href="demos/password-demo.html" style="color:var(--accent); text-decoration:none;">
+      Password Attack Demo
+    </a> – Brute-force, strength check, credential-stuffing.
+  </p>
+</div>
+
+<!-- INSIDER THREAT -->
+<div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:14px;border-radius:8px">
+  <p style="color:var(--muted)">
+    <a href="demos/insider-demo.html" style="color:var(--accent); text-decoration:none;">
+      Insider Threat Demo
+    </a> – Suspicious employee activity simulation.
+  </p>
+</div>
+
+<!-- ZERO DAY -->
+<div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:14px;border-radius:8px">
+  <p style="color:var(--muted)">
+    <a href="demos/zeroday-demo.html" style="color:var(--accent); text-decoration:none;">
+      Zero-Day Exploit Demo
+    </a> – Exploit timeline visualization.
+  </p>
+</div>
+
+<!-- APT -->
+<div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:14px;border-radius:8px">
+  <p style="color:var(--muted)">
+    <a href="demos/apt-demo.html" style="color:var(--accent); text-decoration:none;">
+      APT Attack Demo
+    </a> – Full APT kill-chain simulation.
+  </p>
+</div>
+
+<!-- SUPPLY CHAIN -->
+<div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:14px;border-radius:8px">
+  <p style="color:var(--muted)">
+    <a href="demos/supplychain-demo.html" style="color:var(--accent); text-decoration:none;">
+      Supply Chain Attack Demo
+    </a> – Dependency compromise propagation.
+  </p>
+</div>
+
+<!-- IOT -->
+<div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:14px;border-radius:8px">
+  <p style="color:var(--muted)">
+    <a href="demos/iot-demo.html" style="color:var(--accent); text-decoration:none;">
+      IoT Attack Demo
+    </a> – Device hijacking visualization.
+  </p>
+</div>
+
+<!-- CRYPTOGRAPHIC -->
+<div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:14px;border-radius:8px">
+  <p style="color:var(--muted)">
+    <a href="demos/crypto-demo.html" style="color:var(--accent); text-decoration:none;">
+      Cryptographic Attack Demo
+    </a> – Hash collision & weak encryption simulation.
+  </p>
+</div>
+
+    
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

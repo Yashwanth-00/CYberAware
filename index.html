@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CYberAware</title>
+    <link rel="icon" type="image/png" href="images/image.png" >
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="background-image-container"></div>
+  
+  <!-- Sidebar -->
+  <aside class="sidebar" id="siteSidebar">
+    
+
+    <button class="toggle" aria-label="Toggle sidebar" aria-expanded="true"><i class="fas fa-bars" style="color:var(--accent)"></i></button>
+
+   <nav class="side-nav" aria-label="Primary">
+    <div>
+  <a class="nav-item" href="index.html">
+    <span class="icon"><i class="fas fa-home"></i></span>
+    <span class="label">Home</span>
+  </a>
+
+  <!-- Attacks menu with submenu -->
+  <div class="nav-item has-sub" id="attacksMenu" tabindex="0" role="button" aria-expanded="false" aria-controls="attacksSub">
+  <a class="nav-link" >
+    <span class="icon"><i class="fas fa-skull-crossbones"></i></span>
+    <span class="label">Attacks</span>
+    <span class="sub-caret"><i class="fas fa-chevron-down"></i></span>
+  </a>
+
+ <div class="sub-wrap" id="attacksSub" role="region" aria-hidden="true">
+    <a class="sub-item" href="attacks/phishing.html">Phishing & Social Engineering</a>
+    <a class="sub-item" href="attacks/malware.html">Malware Attacks</a>
+    <a class="sub-item" href="attacks/dos.html">Denial-of-Service (DoS)</a>
+    <a class="sub-item" href="attacks/MitM.html">Man-in-the-Middle (MitM)</a>
+    <a class="sub-item" href="attacks/injection.html">Injection Attacks</a>
+    <a class="sub-item" href="attacks/password.html">Password Attacks</a>
+    <a class="sub-item" href="attacks/insider.html">Insider Threats</a>
+    <a class="sub-item" href="attacks/zero.html">Zero-Day Exploits</a>
+    <a class="sub-item" href="attacks/apt.html">Advanced Persistent Threats (APT)</a>
+    <a class="sub-item" href="attacks/suplly.html">Supply Chain Attacks</a>
+    <a class="sub-item" href="attacks/IoT.html">IoT & Hardware Attacks</a>
+    <a class="sub-item" href="attacks/crypto.html">Cryptographic Attacks</a>
+  </div>
+</div>
+
+  <a class="nav-item" href="demos.html">
+    <span class="icon"><i class="fas fa-play-circle"></i></span>
+    <span class="label">Demos</span>
+  </a>
+
+  <a class="nav-item" href="resources.html">
+    <span class="icon"><i class="fas fa-book"></i></span>
+    <span class="label">Resources</span>
+  </a>
+
+  <a class="nav-item" href="about.html">
+    <span class="icon"><i class="fas fa-info-circle"></i></span>
+    <span class="label">About</span>
+  </a>
+
+  <a class="nav-item" href="contact.html">
+    <span class="icon"><i class="fas fa-envelope"></i></span>
+    <span class="label">Contact</span>
+  </a>
+</nav>
+
+  </aside>
+
+  <!-- Header (logo only) -->
+  <header class="header" role="banner">
+    <div class="logo"><span class="mark">CYber</span>Aware</div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+  <!-- HERO -->
+  <section style="display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap;">
+    <div style="flex:1 1 520px;min-width:280px">
+      <h1 style="margin:0 0 10px 0; font-size:28px; color:#fff;">CYberAware — Learn real attacks, safely</h1>
+      <p style="color:var(--muted); margin:0 0 18px 0; font-size:15px;">
+        Interactive, beginner-friendly demos and clear explainers to help students and teams understand how cyber attacks happen — then how to detect and defend against them.
+      </p>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="demos.html" style="background:linear-gradient(90deg,var(--accent),#7b61ff); color:#021; padding:10px 14px; border-radius:8px; font-weight:700; text-decoration:none; box-shadow:0 6px 18px rgba(20,184,166,0.06);">Explore Demos</a>
+        <a href="attacks.html" style="border:1px solid rgba(255,255,255,0.06); color:var(--muted); padding:10px 14px; border-radius:8px; text-decoration:none;">Read About Attacks</a>
+      </div>
+
+      <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+        <div style="background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:8px; min-width:140px;">
+          <div style="font-weight:800; font-size:18px; color:#dff9f1">12</div>
+          <div style="color:var(--muted); font-size:13px">Demo modules</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:8px; min-width:140px;">
+          <div style="font-weight:800; font-size:18px; color:#dff9f1">100+</div>
+          <div style="color:var(--muted); font-size:13px">Learning notes & examples</div>
+        </div>
+        
+      </div>
+    </div>
+
+    <div style="width:320px; min-width:240px;">
+      <!-- small visual card to match theme -->
+      <div style="background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.45);">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg, rgba(20,184,166,0.18), rgba(123,97,255,0.08)); display:grid;place-items:center;font-weight:900;color:#bffdf0;">T</div>
+          <div>
+            <div style="font-weight:800;color:#e6f7ff">CYberAware</div>
+            <div style="color:var(--muted); font-size:13px">Interactive cybersecurity learning</div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px; color:var(--muted); font-size:13px;">
+          <strong>Quick start:</strong>
+          <ol style="margin:8px 0 0 16px; color:var(--muted);">
+            <li>Open <em>Attacks</em> → try <strong>Phishing</strong></li>
+            <li>Read the attack summary</li>
+            <li>Practice safe responses</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE ROW -->
+  <section style="margin-top:22px; display:flex; gap:14px; flex-wrap:wrap;">
+    <div style="flex:1; min-width:220px; background:rgba(255,255,255,0.02); padding:14px; border-radius:10px;">
+      <h3 style="margin:0 0 8px 0; color:#fff; font-size:16px;">Interactive Demos</h3>
+      <p style="color:var(--muted); margin:0 0 8px 0;">Hands-on simulations of attacks (safe, frontend-only). Learn indicators and mitigation.</p>
+      <a href="demos.html" style="color:var(--accent); text-decoration:none; font-weight:700;">See demos →</a>
+    </div>
+
+    <div style="flex:1; min-width:220px; background:rgba(255,255,255,0.02); padding:14px; border-radius:10px;">
+      <h3 style="margin:0 0 8px 0; color:#fff; font-size:16px;">Beginner-friendly Guides</h3>
+      <p style="color:var(--muted); margin:0 0 8px 0;">Short, simple explanations with real-world examples and visuals.</p>
+      <a href="attacks/phishing.html" style="color:var(--accent); text-decoration:none; font-weight:700;">Start learning →</a>
+    </div>
+
+    <div style="flex:1; min-width:220px; background:rgba(255,255,255,0.02); padding:14px; border-radius:10px;">
+      <h3 style="margin:0 0 8px 0; color:#fff; font-size:16px;">Practical Tips</h3>
+      <p style="color:var(--muted); margin:0 0 8px 0;">Detect phishing, harden endpoints, and best practices for incident response.</p>
+      <a href="resources.html" style="color:var(--accent); text-decoration:none; font-weight:700;">Read tips →</a>
+    </div>
+  </section>
+
+  <!-- DEMO QUICK LINKS GRID -->
+  <section style="margin-top:26px;">
+    <h2 style="margin:0 0 10px 0; font-size:18px; color:#fff;">Quick demo links</h2>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-top:12px;">
+      <!-- Simple card format, keeps theme and uses existing colors -->
+      <a href="demos/phishing-demo.html" style="text-decoration:none;">
+        <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px; height:100%;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:46px;height:46px;border-radius:8px;display:grid;place-items:center;background:rgba(20,184,166,0.12);font-weight:800;color:var(--accent)">P</div>
+            <div>
+              <div style="color:#fff;font-weight:700">Phishing Demo</div>
+              <div style="color:var(--muted);font-size:13px">Fake login & credential capture</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="demos/malware-demo.html" style="text-decoration:none;">
+        <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:46px;height:46px;border-radius:8px;display:grid;place-items:center;background:rgba(123,97,255,0.08);font-weight:800;color:#b89bff">M</div>
+            <div>
+              <div style="color:#fff;font-weight:700">Malware Demo</div>
+              <div style="color:var(--muted);font-size:13px">Infection & indicators</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="demos/dos-demo.html" style="text-decoration:none;">
+        <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:46px;height:46px;border-radius:8px;display:grid;place-items:center;background:rgba(255,107,107,0.06);font-weight:800;color:#ff9b9b">D</div>
+            <div>
+              <div style="color:#fff;font-weight:700">DoS / DDoS</div>
+              <div style="color:var(--muted);font-size:13px">Service overload simulation</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="demos/mitm-demo.html" style="text-decoration:none;">
+        <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:46px;height:46px;border-radius:8px;display:grid;place-items:center;background:rgba(255,213,102,0.06);font-weight:800;color:#ffd166">M</div>
+            <div>
+              <div style="color:#fff;font-weight:700">MitM Demo</div>
+              <div style="color:var(--muted);font-size:13px">Intercept & modify messages</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="demos/injection-demo.html" style="text-decoration:none;">
+        <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:46px;height:46px;border-radius:8px;display:grid;place-items:center;background:rgba(20,184,166,0.06);font-weight:800;color:#7fffe8">I</div>
+            <div>
+              <div style="color:#fff;font-weight:700">Injection Attacks</div>
+              <div style="color:var(--muted);font-size:13px">SQLi & XSS demos</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="demos/password-demo.html" style="text-decoration:none;">
+        <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:46px;height:46px;border-radius:8px;display:grid;place-items:center;background:rgba(123,97,255,0.06);font-weight:800;color:#c9b3ff">P</div>
+            <div>
+              <div style="color:#fff;font-weight:700">Password Demo</div>
+              <div style="color:var(--muted);font-size:13px">Strength & stuffing</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="demos/insider-demo.html" style="text-decoration:none;">
+        <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:46px;height:46px;border-radius:8px;display:grid;place-items:center;background:rgba(255,107,107,0.04);font-weight:800;color:#ffb6b6">I</div>
+            <div>
+              <div style="color:#fff;font-weight:700">Insider Demo</div>
+              <div style="color:var(--muted);font-size:13px">Audit & response</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="demos/zeroday-demo.html" style="text-decoration:none;">
+        <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:46px;height:46px;border-radius:8px;display:grid;place-items:center;background:rgba(255,193,7,0.06);font-weight:800;color:#ffd166">Z</div>
+            <div>
+              <div style="color:#fff;font-weight:700">Zero-Day Demo</div>
+              <div style="color:var(--muted);font-size:13px">Exploit lifecycle</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="demos/apt-demo.html" style="text-decoration:none;">
+        <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:46px;height:46px;border-radius:8px;display:grid;place-items:center;background:rgba(123,97,255,0.06);font-weight:800;color:#b89bff">A</div>
+            <div>
+              <div style="color:#fff;font-weight:700">APT Demo</div>
+              <div style="color:var(--muted);font-size:13px">Kill-chain & SOC response</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="demos/supply-demo.html" style="text-decoration:none;">
+        <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:46px;height:46px;border-radius:8px;display:grid;place-items:center;background:rgba(20,184,166,0.06);font-weight:800;color:#7fffe8">S</div>
+            <div>
+              <div style="color:#fff;font-weight:700">Supply Chain</div>
+              <div style="color:var(--muted);font-size:13px">Dependency compromise</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="demos/iot-demo.html" style="text-decoration:none;">
+        <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:46px;height:46px;border-radius:8px;display:grid;place-items:center;background:rgba(123,97,255,0.06);font-weight:800;color:#c9b3ff">IoT</div>
+            <div>
+              <div style="color:#fff;font-weight:700">IoT Demo</div>
+              <div style="color:var(--muted);font-size:13px">Device hijacking</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="demos/crypto-demo.html" style="text-decoration:none;">
+        <div style="background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:46px;height:46px;border-radius:8px;display:grid;place-items:center;background:rgba(255,213,102,0.06);font-weight:800;color:#ffd166">C</div>
+            <div>
+              <div style="color:#fff;font-weight:700">Cryptographic</div>
+              <div style="color:var(--muted);font-size:13px">Weak crypto & attacks</div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- LATEST UPDATES / NOTES -->
+  <section style="margin-top:26px; display:flex; gap:12px; flex-wrap:wrap;">
+    <div style="flex:1; background:rgba(255,255,255,0.02); padding:14px; border-radius:10px;">
+      <h3 style="margin:0 0 8px 0; color:#fff;">Latest updates</h3>
+      <ul style="color:var(--muted); margin:8px 0 0 16px;">
+        <li>New: APT demo — interactive kill-chain simulation.</li>
+        <li>Added: Supply-chain visualization and timeline.</li>
+        <li>Improved: Phishing demo now warns on unsafe inputs.</li>
+      </ul>
+    </div>
+
+    <div style="width:320px; background:rgba(255,255,255,0.02); padding:14px; border-radius:10px;">
+      <h3 style="margin:0 0 8px 0; color:#fff;">Learning path</h3>
+      <ol style="color:var(--muted); margin:8px 0 0 16px;">
+        <li>Start with Phishing & Password demos</li>
+        <li>Try Malware & Injection simulations</li>
+        <li>Finish with APT and Supply Chain</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <section style="margin-top:28px; text-align:center;">
+    <div style="display:inline-block; background:linear-gradient(90deg, rgba(20,184,166,0.08), rgba(123,97,255,0.06)); padding:16px 22px; border-radius:12px;">
+      <div style="font-weight:800; color:#fff; font-size:16px;">Build your cyber skills — safely</div>
+      <div style="color:var(--muted); margin-top:6px;">Explore demos, read short guides, and practice safe responses.</div>
+      <div style="margin-top:12px;">
+        <a href="demos.html" style="background:linear-gradient(90deg,var(--accent),#7b61ff); color:#021; padding:10px 14px; border-radius:8px; font-weight:700; text-decoration:none;">Start learning</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- small spacing so content doesn't touch bottom -->
+  <div style="height:36px"></div>
+</main>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

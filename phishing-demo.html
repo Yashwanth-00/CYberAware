@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CYberAware - Phishing Demo</title>
+  <link rel="icon" type="image/png" href="images/image.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    /* Demo-specific styles */
+    .phishing-container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 40px;
+      background: #1c212c;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+    .phishing-logo {
+      width:50px;
+      margin-bottom: 20px;
+    }
+    .phishing-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .phishing-form input {
+      padding: 12px;
+      border: 1px solid #333;
+      background: #232833;
+      color: #fff;
+      border-radius: 5px;
+    }
+    .phishing-form button {
+      padding: 12px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .phishing-form button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+ <div id="phishing-popup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center; text-align: center;">
+  <div style="background: #1c212c; padding: 40px; border-radius: 10px; box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); max-width: 500px;">
+    <h2 style="color: #e74c3c; margin-bottom: 20px;">Phishing Attack: Credentials Captured!</h2>
+    <p style="color: #fff; font-size: 18px;">
+      This is how a real phishing attack works. The moment you clicked "Sign in," your username and password were sent to an attacker.
+    </p>
+    <button onclick="document.getElementById('phishing-popup').style.display = 'none';" style="margin-top: 30px; padding: 10px 20px; background: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Close</button>
+  </div>
+</div>
+  <div class="background-image-container"></div>
+  <aside class="sidebar" id="siteSidebar">
+    <button class="toggle" aria-label="Toggle sidebar" aria-expanded="true"><i class="fas fa-bars" style="color:var(--accent)"></i></button>
+
+   <nav class="side-nav" aria-label="Primary">
+    <div>
+  <a class="nav-item" href="../index.html">
+    <span class="icon"><i class="fas fa-home"></i></span>
+    <span class="label">Home</span>
+  </a>
+
+  <div class="nav-item has-sub" id="attacksMenu" tabindex="0" role="button" aria-expanded="false" aria-controls="attacksSub">
+  <a class="nav-link">
+    <span class="icon"><i class="fas fa-skull-crossbones"></i></span>
+    <span class="label">Attacks</span>
+    <span class="sub-caret"><i class="fas fa-chevron-down"></i></span>
+  </a>
+
+  <div class="sub-wrap" id="attacksSub" role="region" aria-hidden="true">
+    <a class="sub-item" href="../attacks/phishing.html">Phishing & Social Engineering</a>
+    <a class="sub-item" href="../attacks/malware.html">Malware Attacks</a>
+    
+    <a class="sub-item" href="../attacks/dos.html">Denial-of-Service (DoS)</a>
+    <a class="sub-item" href="../attacks/mitm.html">Man-in-the-Middle (MitM)</a>
+    <a class="sub-item" href="../attacks/injection.html">Injection Attacks</a>
+    <a class="sub-item" href="../attacks/password.html">Password Attacks</a>
+    <a class="sub-item" href="../attacks/insider.html">Insider Threats</a>
+    <a class="sub-item" href="../attacks/zeroday.html">Zero-Day Exploits</a>
+    <a class="sub-item" href="../attacks/apt.html">Advanced Persistent Threats (APT)</a>
+    <a class="sub-item" href="../attacks/supplychain.html">Supply Chain Attacks</a>
+    <a class="sub-item" href="../attacks/iot.html">IoT & Hardware Attacks</a>
+    <a class="sub-item" href="../attacks/crypto.html">Cryptographic Attacks</a>
+  </div>
+</div>
+
+  <a class="nav-item" href="../demos.html">
+    <span class="icon"><i class="fas fa-play-circle"></i></span>
+    <span class="label">Demos</span>
+  </a>
+
+  <a class="nav-item" href="../resources.html">
+    <span class="icon"><i class="fas fa-book"></i></span>
+    <span class="label">Resources</span>
+  </a>
+
+  <a class="nav-item" href="../about.html">
+    <span class="icon"><i class="fas fa-info-circle"></i></span>
+    <span class="label">About</span>
+  </a>
+
+  <a class="nav-item" href="../contact.html">
+    <span class="icon"><i class="fas fa-envelope"></i></span>
+    <span class="label">Contact</span>
+  </a>
+</nav>
+  </aside>
+
+  <header class="header" role="banner">
+    <div class="logo"><span class="mark">CYber</span>Aware</div>
+  </header>
+
+  <main class="main">
+    <div class="phishing-container">
+      <img src="../images/microsoft_logo.jpg" alt="Microsoft Logo" class="phishing-logo">
+      <h2 style="color:#fff; margin-bottom: 20px;">Sign in</h2>
+      <form class="phishing-form">
+        <input type="text" placeholder="Email, phone, or Skype" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Sign in</button>
+      </form>
+      <p style="color:#aaa; font-size:14px; margin-top: 20px;">
+        This is a safe simulation. Do not enter your real credentials.
+      </p>
+    </div>
+    <div style="margin-top: 40px; text-align: center; color: var(--muted); padding: 10px 20px; border-radius: 8px;">
+    <p>
+        Don't worry, even if you entered your real credentials, nothing happens. This is a safe simulation, and we do not collect or store any of your data.
+    </p>
+    <p style="margin-top: 5px;">
+        You are completely safe. Thank you for learning with us.
+    </p>
+</div>
+  </main>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.phishing-form');
+    const popup = document.getElementById('phishing-popup');
+
+    if (form && popup) {
+      const emailInput = form.querySelector('input[type="text"]');
+      const passwordInput = form.querySelector('input[type="password"]');
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        
+        // Clear the form fields after the pop-up appears
+        if (emailInput) {
+          emailInput.value = '';
+        }
+        if (passwordInput) {
+          passwordInput.value = '';
+        }
+
+        popup.style.display = 'flex'; // Show the pop-up
+      });
+    }
+  });
+</script>
+  <script src="../script.js"></script>
+</body>
+</html>
