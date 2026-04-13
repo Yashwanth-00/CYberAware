@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CYberAware - Contact</title>
+
+<link rel="icon" type="image/png" href="images/image.png">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+
+<style>
+.contact-box {
+  margin-top: 28px;
+  padding: 30px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+}
+
+.contact-box p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.contact-form {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: #111827;
+  color: #fff;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  opacity: 0.85;
+}
+
+.security-note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--muted);
+  opacity: 0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="background-image-container"></div>
+
+<aside class="sidebar" id="siteSidebar">
+<button class="toggle"><i class="fas fa-bars"></i></button>
+<nav class="side-nav">
+<a class="nav-item" href="index.html"><span class="icon"><i class="fas fa-home"></i></span><span class="label">Home</span></a>
+<a class="nav-item" href="attacks.html"><span class="icon"><i class="fas fa-shield-alt"></i></span><span class="label">Attack Modules</span></a>
+<a class="nav-item" href="demos.html"><span class="icon"><i class="fas fa-play-circle"></i></span><span class="label">Demos</span></a>
+<a class="nav-item" href="resources.html"><span class="icon"><i class="fas fa-book"></i></span><span class="label">Resources</span></a>
+<a class="nav-item" href="about.html"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="label">About</span></a>
+<a class="nav-item active" href="contact.html"><span class="icon"><i class="fas fa-envelope"></i></span><span class="label">Contact</span></a>
+</nav>
+</aside>
+
+<header class="header">
+<div class="logo"><span class="mark">CYber</span>Aware</div>
+</header>
+
+<main class="main">
+
+<h1>Contact</h1>
+
+<div class="contact-box">
+
+<p>
+For project discussions, collaboration opportunities, or cybersecurity-related inquiries,
+please use the form below.
+</p>
+
+<p style="margin-top:12px;">
+This platform is an educational and portfolio initiative focused on cybersecurity awareness,
+threat modeling, and attack simulation.
+</p>
+
+<form class="contact-form" id="contactForm">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+
+<div class="security-note">
+⚠ This is a static demonstration form. No data is stored or transmitted.
+For real-world deployment, a secure backend with input validation and encryption is required.
+</div>
+
+</div>
+
+</main>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("This is a demo form. No data is stored.");
+});
+</script>
+
+<script src="JS/script.js"></script>
+
+</body>
+</html>
