@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CYberAware – Attack Demos</title>
+  <link rel="icon" type="image/png" href="images/image.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div class="background-image-container"></div>
+
+<!-- Sidebar -->
+<aside class="sidebar" id="siteSidebar">
+  <button class="toggle" aria-label="Toggle sidebar">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <nav class="side-nav">
+
+    <!-- Home -->
+    <a class="nav-item" href="index.html">
+      <span class="icon"><i class="fas fa-home"></i></span>
+      <span class="label">Home</span>
+    </a>
+
+    <!-- Attack Modules (Root Page) -->
+    <a class="nav-item" href="attacks.html">
+      <span class="icon"><i class="fas fa-shield-alt"></i></span>
+      <span class="label">Attack Modules</span>
+    </a>
+
+    <!-- Interactive Demos (Active Page) -->
+    <a class="nav-item active" href="demos.html">
+      <span class="icon"><i class="fas fa-play-circle"></i></span>
+      <span class="label">Interactive Demos</span>
+    </a>
+
+  </nav>
+</aside>
+
+<!-- Header -->
+ 
+<header class="header">
+  <div class="logo"><span class="mark">CYber</span>Aware</div>
+</header>
+
+<!-- Main -->
+
+<main class="main">
+
+  <section>
+    <h1>Interactive Cyber Attack Simulations</h1>
+    <p style="color:var(--muted); max-width:800px;">
+      These simulations demonstrate how real-world cyber attacks operate 
+      and how defensive mechanisms respond — all implemented using safe 
+      frontend logic.
+    </p>
+  </section>
+
+  <section class="attack-category">
+    <h2>Core Attack Simulations</h2>
+
+    <div class="attack-grid">
+
+      <div class="card">
+        <h3>Phishing Simulation</h3>
+        <p>
+          Demonstrates credential harvesting via deceptive login interfaces.
+        </p>
+        <a href="demos/phishing-demo.html" class="btn-primary">Launch Simulation</a>
+      </div>
+
+      <div class="card">
+        <h3>Malware Simulation</h3>
+        <p>
+          Simulates file execution behavior and infection progression.
+        </p>
+        <a href="demos/malware-demo.html" class="btn-primary">Launch Simulation</a>
+      </div>
+
+      <div class="card">
+        <h3>Man-in-the-Middle (MitM)</h3>
+        <p>
+          Visualizes intercepted communication and message modification.
+        </p>
+        <a href="demos/MitM-demo.html" class="btn-primary">Launch Simulation</a>
+      </div>
+
+      <div class="card">
+        <h3>Password Attack Simulation</h3>
+        <p>
+          Demonstrates brute-force time estimation and credential stuffing.
+        </p>
+        <a href="demos/password-demo.html" class="btn-primary">Launch Simulation</a>
+      </div>
+
+      <div class="card">
+        <h3>Advanced Persistent Threat (APT)</h3>
+        <p>
+          Step-by-step visualization of a multi-stage targeted attack campaign.
+        </p>
+        <a href="demos/apt-demo.html" class="btn-primary">Launch Simulation</a>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>

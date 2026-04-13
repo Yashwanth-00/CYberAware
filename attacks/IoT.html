@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CYberAware - Cryptographic Attacks</title>
+
+  <link rel="icon" type="image/png" href="../images/image.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+
+  <style>
+    .section-box {
+      margin-top: 24px;
+      background: rgba(255,255,255,0.02);
+      padding: 24px;
+      border-radius: 10px;
+    }
+
+    .section-box h2 {
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .section-box ul {
+      margin-top: 12px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .demo-section {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+    }
+
+    .demo-section p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .demo-button {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .demo-button:hover {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="background-image-container"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="siteSidebar">
+  <button class="toggle" aria-label="Toggle sidebar">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <nav class="side-nav">
+
+    <a class="nav-item" href="../index.html">
+      <span class="icon"><i class="fas fa-home"></i></span>
+      <span class="label">Home</span>
+    </a>
+
+    <a class="nav-item active" href="../attacks.html">
+      <span class="icon"><i class="fas fa-shield-alt"></i></span>
+      <span class="label">Attack Modules</span>
+    </a>
+
+    <a class="nav-item" href="../demos.html">
+      <span class="icon"><i class="fas fa-play-circle"></i></span>
+      <span class="label">Demos</span>
+    </a>
+
+    <a class="nav-item" href="../resources.html">
+      <span class="icon"><i class="fas fa-book"></i></span>
+      <span class="label">Resources</span>
+    </a>
+
+  </nav>
+</aside>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo"><span class="mark">CYber</span>Aware</div>
+</header>
+
+<!-- MAIN -->
+<main class="main">
+
+<h1 style="margin-bottom:12px;">Cryptographic Attacks</h1>
+
+<p style="color:var(--muted);">
+Cryptographic attacks aim to break or weaken encryption systems in order to access protected data.
+Instead of directly attacking a system, attackers target weaknesses in encryption algorithms, keys, or implementation.
+</p>
+
+<!-- Types -->
+<div class="section-box">
+  <h2>Common Types of Cryptographic Attacks</h2>
+
+  <ul>
+    <li><strong>Brute-Force Attack:</strong> Trying every possible key combination.</li>
+    <li><strong>Dictionary Attack:</strong> Using precompiled lists to guess keys or passwords.</li>
+    <li><strong>Man-in-the-Middle (MitM):</strong> Intercepting encrypted communications.</li>
+    <li><strong>Side-Channel Attack:</strong> Exploiting physical information such as timing or power consumption.</li>
+    <li><strong>Chosen-Plaintext Attack:</strong> Analyzing encryption output to discover keys.</li>
+  </ul>
+</div>
+
+<!-- Weaknesses -->
+<div class="section-box">
+  <h2>Common Cryptographic Weaknesses</h2>
+
+  <ul>
+    <li>Using outdated hashing algorithms (MD5, SHA1).</li>
+    <li>Poor key management practices.</li>
+    <li>Short encryption key lengths.</li>
+    <li>Hardcoded encryption keys in applications.</li>
+    <li>Improper random number generation.</li>
+  </ul>
+</div>
+
+<!-- Impact -->
+<div class="section-box">
+  <h2>Impact on Security (CIA Model)</h2>
+
+  <ul>
+    <li><strong>Confidentiality:</strong> Decryption of sensitive data.</li>
+    <li><strong>Integrity:</strong> Tampering with digitally signed information.</li>
+    <li><strong>Availability:</strong> System disruption if encryption mechanisms fail.</li>
+  </ul>
+</div>
+
+<!-- Detection -->
+<div class="section-box">
+  <h2>Detection Indicators</h2>
+
+  <ul>
+    <li>Unexpected certificate warnings.</li>
+    <li>Weak cipher suite usage in TLS configuration.</li>
+    <li>Abnormal encryption errors.</li>
+    <li>Repeated decryption failures in logs.</li>
+  </ul>
+</div>
+
+<!-- Mitigation -->
+<div class="section-box">
+  <h2>Mitigation & Defense Strategies</h2>
+
+  <ul>
+    <li>Use strong encryption standards (AES-256, RSA-2048+).</li>
+    <li>Implement secure key management systems.</li>
+    <li>Regularly rotate encryption keys.</li>
+    <li>Disable outdated cipher suites.</li>
+    <li>Conduct cryptographic audits and penetration testing.</li>
+  </ul>
+</div>
+
+<!-- Demo -->
+<div class="demo-section">
+  <p>Want to explore encryption-related attack simulations?</p>
+  <a href="../demos.html" class="demo-button">
+    Explore Simulations
+  </a>
+</div>
+
+</main>
+
+<script src="../JS/script.js"></script>
+
+</body>
+</html>

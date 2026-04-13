@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CYberAware - Attack Modules</title>
+
+<link rel="icon" type="image/png" href="images/image.png">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+
+<style>
+.intro-box {
+  margin-top:20px;
+  padding:28px;
+  background:rgba(255,255,255,0.03);
+  border-radius:12px;
+}
+
+.intro-box p {
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.attack-grid {
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:22px;
+}
+
+.attack-card {
+  background:rgba(255,255,255,0.02);
+  padding:22px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.04);
+  transition:0.3s ease;
+}
+
+.attack-card:hover {
+  transform:translateY(-6px);
+  border-color:var(--accent);
+}
+
+.attack-card h3 {
+  margin-bottom:8px;
+}
+
+.attack-card p {
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+}
+
+.tags {
+  margin-top:12px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.tag {
+  font-size:11px;
+  padding:4px 9px;
+  border-radius:18px;
+  font-weight:600;
+}
+
+.cia { background:rgba(255,0,0,0.15); color:#ff6b6b; }
+.mitre { background:rgba(0,150,255,0.15); color:#4dabf7; }
+
+.view-link {
+  display:inline-block;
+  margin-top:14px;
+  color:var(--accent);
+  font-weight:600;
+  font-size:14px;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="background-image-container"></div>
+
+<aside class="sidebar" id="siteSidebar">
+<button class="toggle"><i class="fas fa-bars"></i></button>
+<nav class="side-nav">
+<a class="nav-item" href="index.html"><span class="icon"><i class="fas fa-home"></i></span><span class="label">Home</span></a>
+<a class="nav-item active" href="attacks.html"><span class="icon"><i class="fas fa-shield-alt"></i></span><span class="label">Attack Modules</span></a>
+<a class="nav-item" href="demos.html"><span class="icon"><i class="fas fa-play-circle"></i></span><span class="label">Demos</span></a>
+<a class="nav-item" href="resources.html"><span class="icon"><i class="fas fa-book"></i></span><span class="label">Resources</span></a>
+</nav>
+</aside>
+
+<header class="header">
+<div class="logo"><span class="mark">CYber</span>Aware</div>
+</header>
+
+<main class="main">
+
+<div class="intro-box">
+<h1>Cybersecurity Attack Classification</h1>
+<p>
+This section presents structured analysis of modern cyber attack categories.
+Each module explains attack mechanics, impact on the CIA triad,
+detection indicators, and defensive strategies aligned with real-world security operations.
+</p>
+</div>
+
+<div class="attack-grid">
+
+<!-- 1 -->
+<div class="attack-card">
+<h3>Phishing & Social Engineering</h3>
+<p>Human-focused deception techniques used to steal credentials and sensitive data.</p>
+<div class="tags"><span class="tag cia">CIA: C</span><span class="tag mitre">T1566</span></div>
+<a href="attacks/phishing.html" class="view-link">Explore →</a>
+</div>
+
+<!-- 2 -->
+<div class="attack-card">
+<h3>Malware Attacks</h3>
+<p>Ransomware, trojans, spyware and worms used for persistence and exploitation.</p>
+<div class="tags"><span class="tag cia">CIA: C/I/A</span><span class="tag mitre">T1059</span></div>
+<a href="attacks/malware.html" class="view-link">Explore →</a>
+</div>
+
+<!-- 3 -->
+<div class="attack-card">
+<h3>Denial of Service (DoS)</h3>
+<p>Overloading systems to disrupt availability of services.</p>
+<div class="tags"><span class="tag cia">CIA: A</span><span class="tag mitre">T1499</span></div>
+<a href="attacks/dos.html" class="view-link">Explore →</a>
+</div>
+
+<!-- 4 -->
+<div class="attack-card">
+<h3>Man-in-the-Middle (MitM)</h3>
+<p>Intercepting and modifying communication between two parties.</p>
+<div class="tags"><span class="tag cia">CIA: C/I</span><span class="tag mitre">T1557</span></div>
+<a href="attacks/MitM.html" class="view-link">Explore →</a>
+</div>
+
+<!-- 5 -->
+<div class="attack-card">
+<h3>Injection Attacks</h3>
+<p>SQL, command, or code injection via unsanitized input.</p>
+<div class="tags"><span class="tag cia">CIA: C/I</span><span class="tag mitre">T1190</span></div>
+<a href="attacks/injection.html" class="view-link">Explore →</a>
+</div>
+
+<!-- 6 -->
+<div class="attack-card">
+<h3>Password Attacks</h3>
+<p>Brute-force, spraying and credential stuffing targeting authentication systems.</p>
+<div class="tags"><span class="tag cia">CIA: C</span><span class="tag mitre">T1110</span></div>
+<a href="attacks/password.html" class="view-link">Explore →</a>
+</div>
+
+<!-- 7 -->
+<div class="attack-card">
+<h3>Insider Threats</h3>
+<p>Malicious or negligent actions by trusted internal users.</p>
+<div class="tags"><span class="tag cia">CIA: C/I/A</span><span class="tag mitre">TA0009</span></div>
+<a href="attacks/insider.html" class="view-link">Explore →</a>
+</div>
+
+<!-- 8 -->
+<div class="attack-card">
+<h3>Zero-Day Exploits</h3>
+<p>Exploiting unknown vulnerabilities before patches are available.</p>
+<div class="tags"><span class="tag cia">CIA: C/I</span><span class="tag mitre">T1203</span></div>
+<a href="attacks/zero.html" class="view-link">Explore →</a>
+</div>
+
+<!-- 9 -->
+<div class="attack-card">
+<h3>Advanced Persistent Threats</h3>
+<p>Long-term targeted campaigns involving lateral movement and exfiltration.</p>
+<div class="tags"><span class="tag cia">CIA: C/I</span><span class="tag mitre">TA0001–TA0010</span></div>
+<a href="attacks/apt.html" class="view-link">Explore →</a>
+</div>
+
+<!-- 10 -->
+<div class="attack-card">
+<h3>Supply Chain Attacks</h3>
+<p>Compromising trusted vendors to infiltrate multiple organizations.</p>
+<div class="tags"><span class="tag cia">CIA: C/I</span><span class="tag mitre">T1195</span></div>
+<a href="attacks/suplly.html" class="view-link">Explore →</a>
+</div>
+
+<!-- 11 -->
+<div class="attack-card">
+<h3>IoT & Hardware Attacks</h3>
+<p>Exploiting vulnerable connected devices and embedded systems.</p>
+<div class="tags"><span class="tag cia">CIA: C/I/A</span><span class="tag mitre">T0859</span></div>
+<a href="attacks/IoT.html" class="view-link">Explore →</a>
+</div>
+
+<!-- 12 -->
+<div class="attack-card">
+<h3>Cryptographic Attacks</h3>
+<p>Breaking or weakening encryption systems and key management.</p>
+<div class="tags"><span class="tag cia">CIA: C/I</span><span class="tag mitre">T1600</span></div>
+<a href="attacks/crypto.html" class="view-link">Explore →</a>
+</div>
+
+</div>
+
+</main>
+
+<script src="JS/script.js"></script>
+
+</body>
+</html>
